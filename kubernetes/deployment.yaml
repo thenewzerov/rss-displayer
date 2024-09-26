@@ -1,0 +1,69 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: rss
+  labels:
+    name: rss
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: feeds-config
+  namespace: rss
+data:
+  feeds.txt: |
+    https://myexample1.com/rss/example.xml
+    https://myexample2.net/rss/rss.xml
+    {RSS-FEEDS-HERE}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rss
+  namespace: rss
+  labels:
+    app: rss
+spec:
+  selector:
+    matchLabels:
+      app: rss
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: rss
+    spec:
+      containers:
+        - name: rss
+          image: {IMAGE-NAME-HERE}
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          volumeMounts:
+          - name: feeds
+            mountPath: "/app/feeds.txt"
+            subPath: feeds.txt
+            readOnly: true
+      volumes:
+      - name: feeds
+        configMap:
+          name: feeds-config
+          items:
+          - key: feeds.txt
+            path: feeds.txt
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rss
+  namespace: rss
+spec:
+  selector:
+    app: rss
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000

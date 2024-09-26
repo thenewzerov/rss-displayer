@@ -1,0 +1,100 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.articles {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.article-item {
+    padding: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.article-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 10px;
+}
+
+.channel {
+    display: flex;
+    align-items: center;
+}
+
+.channel-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.channel-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.article-date {
+    font-size: 14px;
+    color: #777;
+}
+
+.article-content {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.article-image-container {
+    margin-bottom: 25px;
+    width: 60%;
+}
+
+.article-image {
+    width: 100%;
+    height: auto;
+}
+
+.article-description {
+    flex-grow: 1;
+    font-size: 35px;
+}
+
+.article-link-container {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.article-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 16px;
+}
+
+.article-link:hover {
+    text-decoration: underline;
+}

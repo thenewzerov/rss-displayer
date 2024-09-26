@@ -1,0 +1,2 @@
+https://myexample1.com/rss/example.xml
+https://myexample2.net/rss/rss.xml

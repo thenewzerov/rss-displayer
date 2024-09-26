@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <title>RSS Reader</title>
+</head>
+<body>
+    <div class="articles" id="articles">
+    </div>
+
+    <!-- Template for articles -->
+    <template id="article-template">
+        <div class="article-item">
+            <div class="article-title"></div>
+
+            <div class="article-info">
+                <div class="channel">
+                    <img class="channel-logo" src="" alt="">
+                    <span class="channel-name"></span>
+                </div>
+                <div class="article-date"></div>
+            </div>
+
+            <div class="article-content">
+                <div class="article-image-container">
+                    <img class="article-image" alt="" src="">
+                </div>
+                <div class="article-description"></div>
+                <div class="article-body"></div>
+            </div>
+
+            <div class="article-link-container">
+                <a class="article-link" target="_blank"></a>
+            </div>
+        </div>
+    </template>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
